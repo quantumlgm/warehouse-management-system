@@ -1,8 +1,10 @@
-.venv/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 *$py.class
-.vscode/
+.venv/
+env/
 .env
+venv/
+ENV/
+.vscode/
+.idea/
