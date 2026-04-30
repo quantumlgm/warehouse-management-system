@@ -39,9 +39,10 @@ source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-### 5. Start a server
+### 5. Run the server
+#### In the project root directory
 ```bash
-uvicorn main:app --reload
+uvicorn src.main:app --reload
 ```
 and click on link
 ```bash
