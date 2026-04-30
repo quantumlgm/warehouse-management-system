@@ -1,11 +1,11 @@
 # Warehouse Managment System
 
-## Функции
+## Features
 1. Comprehensive API Endpoints: Provides a wide range of endpoints for flexible tool management.
 2. Item Status Tracking: Robust capabilities for managing and monitoring item statuses in real-time.
 3. Optimized Data Models: Logical database schema with well-defined relationships using SQLAlchemy.
 
-## Стек Tech stack
+## Tech stack
 * Language: Python 3.12.10
 * Framework: FastApi 0.136.1
 * ORM: SQLAlchemy 2.0.49
