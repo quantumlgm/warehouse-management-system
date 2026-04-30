@@ -9,46 +9,57 @@
 * Language: Python 3.12.10
 * Framework: FastApi 0.136.1
 * ORM: SQLAlchemy 2.0.49
-* Database: PostgresSQL 17.9
+* Migrations: Alembic 1.18.4
+* Database: PostgreSQL 17.9
+* Environment: Docker & Docker Compose
 
-## How to Run
-
-### 1. Installation
+# How to Run
+### 1. Initial Setup (Required for both methods)
+Installation
 ```bash
-git clone https://github.com/quantumlgm/warehouse-management-system)
+git clone https://github.com/quantumlgm/warehouse-management-system
 cd warehouse-management-system
 ```
 ### 2. Environment Setup
-Create a .env file in the root directory and configure your database credentials:
 ```bash
 DB_USER_NAME=your_db_username
-DB_HOST=localhost
+DB_HOST=db  # Use 'db' for Docker or 'localhost' for local run
 DB_DATABASE=WarehouseManagementServer
 DB_PASSWORD=your_db_password
 DB_PORT=5432
 ```
-### 3. Create a virtual environment
+# 2. Choose your way to run
+## A: Run with Docker (Recommended)
+### 3. Launch containers:
+```bash
+docker-compose up --build
+```
+### 4. Apply migrations:
+```bash
+docker-compose exec app alembic upgrade head
+```
+## B: Local Installation
+### 3. Create and activate a virtual environment:
 ```bash
 python -m venv .venv
-# For Windows:
+# Windows:
 .venv\Scripts\activate
-# For Linux/macOS:
+# Linux/macOS:
 source .venv/bin/activate
 ```
-### 4. Installation Dependenses
+### 4. Install Dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-### 5. Run the server
-#### In the project root directory
+### 5. Create tables:
+```bash
+alembic upgrade head
+```
+### 6. Run the server:
 ```bash
 uvicorn src.main:app --reload
 ```
-and click on link
-```bash
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-```
-### 6. Use the interface
+## Use the interface
 1. http://127.0.0.1:8000/scalar - Scalar (RECOMENDED)
 2. http://127.0.0.1:8000/docs - Swagger
 3. http://127.0.0.1:8000/redoc - Redoc
