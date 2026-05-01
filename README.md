@@ -15,7 +15,6 @@
 
 # How to Run
 ### 1. Initial Setup (Required for both methods)
-Installation
 ```bash
 git clone https://github.com/quantumlgm/warehouse-management-system
 cd warehouse-management-system
